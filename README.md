@@ -1,5 +1,5 @@
 ---
-title: List Scripts In Folder
+title: Script List
 
 description: This MaxScript list all scripts in a specified folders
 
@@ -35,7 +35,7 @@ Download
 
 ### [Click here to download latest version](https://github.com/jb-alvarado/ListScriptsInFolder/archive/master.zip)
 
-Current release is **v0.97**
+Current release is **v1.0**
 
 For using it:
 Open the script and edit the line: global start_dir = "\\\\path\\to\\scripts\\"  -  to the path where your scripts are.
