@@ -53,7 +53,7 @@ try ( destroyDialog ScriptList )catch ()
 	global iniFile = ( getDir #userScripts + @"\ScriptList.ini" )
 
 	if not doesFileExist iniFile then (
-		new_ini = createFile iniFile
+		try ( new_ini = createFile iniFile ) catch ( messagebox ( "You have no write access to: \"" + iniFile + "\"..." ) title:"Script List" )
 		format "[Paths]\n" to:new_ini
 		close new_ini
 		)
@@ -287,7 +287,7 @@ try ( destroyDialog ScriptList )catch ()
 			buildList path01
 			)
 
-		 on mlbxList MouseDoubleClick arg do (
+		on mlbxList MouseDoubleClick arg do (
 			hit=( mlbxList.HitTest ( dotNetObject "System.Drawing.Point" arg.x arg.y ) )
 			all_files=hit.item.Index
 			index = mlbxList.items.item[all_files].index + 1
